@@ -138,7 +138,7 @@ export default
 				}
 
 
-				let apiUrl = "/api?users=" + userlist.join("&users=");
+				let apiUrl = "http://localhost:8081/api?users=" + userlist.join("&users=");
 				let clientUrl = "?u=" + userlist.join("&u=");
 
 				if (ignoreList.length > 0) {
@@ -159,6 +159,7 @@ export default
 					let hash = this.hashCode(apiUrl);
 					console.log('url: ' + apiUrl + '\nhash: ' + hash);
 					vue.currentHash = hash;
+					console.log('apiUrl: ' + apiUrl);
 					fetch(apiUrl)
 						.then(function (res) {
 							// check if new request has been sent since submitting
