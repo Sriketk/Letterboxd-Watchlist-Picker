@@ -1,4 +1,4 @@
-package film
+package main
 
 import (
 	"encoding/json"
@@ -7,6 +7,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -70,19 +71,19 @@ const urlEnd = "std/125x187/"            // second part of url for getting full 
 const site = "https://letterboxd.com"
 
 
-// func main() {
-// 	getFilmHandler := http.HandlerFunc(Handler)
-// 	http.Handle("/film", getFilmHandler)
-// 	log.Println("serving at :8080")
-// 	port := os.Getenv("PORT")
-// 	if port == "" {
-// 		port = "8080"
-// 		log.Printf("Defaulting to port %s", port)
-// 	}
+func main() {
+	getFilmHandler := http.HandlerFunc(Handler)
+	http.Handle("/film", getFilmHandler)
+	log.Println("serving at :8080")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+		log.Printf("Defaulting to port %s", port)
+	}
 
-// 	log.Printf("Listening on port %s", port)
-// 	http.ListenAndServe(":"+port, nil)
-// }
+	log.Printf("Listening on port %s", port)
+	http.ListenAndServe(":"+port, nil)
+}
 
 var year int
 
@@ -92,7 +93,7 @@ func init() {
 
 
 
-//Main handler func for request
+//Main   j func for request
 func Handler(w http.ResponseWriter, r *http.Request) {
 	enableCors(&w)
 	log.Println(year)
