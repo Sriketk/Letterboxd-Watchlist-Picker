@@ -137,9 +137,9 @@ export default
 					ignoreList.push('feature')
 				}
 
-				
 
-				let apiUrl = "http://localhost:8081/api?users=" + userlist.join("&users=");
+
+				let apiUrl = "http://localhost:8080/film?users=" + userlist.join("&users=");
 				let clientUrl = "?u=" + userlist.join("&u=");
 
 				if (ignoreList.length > 0) {
