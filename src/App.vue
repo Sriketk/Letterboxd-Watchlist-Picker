@@ -138,7 +138,6 @@ export default
 				}
 
 
-
 				let apiUrl = "http://localhost:8080/film?users=" + userlist.join("&users=");
 				let clientUrl = "?u=" + userlist.join("&u=");
 
